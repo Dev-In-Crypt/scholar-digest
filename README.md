@@ -1,8 +1,8 @@
 # scholar-digest
 
 Turns Google Scholar email alerts into a clean Telegram feed of one-paragraph
-research cards. Runs entirely on Google Apps Script: no server, no Docker,
-no n8n, nothing to keep alive.
+research cards. Runs entirely on Google Apps Script: no server, no Docker, nothing to keep alive.
+Runs entirely on Google Apps Script: no server, no container, nothing to keep alive.
 
 <p align="center">
   <img alt="Apps Script" src="https://img.shields.io/badge/Google_Apps_Script-V8-4285F4?logo=google&logoColor=white">
@@ -117,6 +117,8 @@ Dedup keys are a 32-bit FNV hash of the normalized title plus its length, about
 
 The subject-line parser strips both the English and the Russian Scholar wording,
 so it works regardless of the Gmail interface language.
+
+The Scholar parser is one module. The collect, parse, enrich, filter, deliver structure works for any recurring source: job boards, tenders, regulatory feeds, competitor mentions. Swapping the parser and the delivery target is the only work involved.
 
 ## License
 
